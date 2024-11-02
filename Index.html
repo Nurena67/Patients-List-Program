@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Patient</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="table">
+        <div class="table_header">
+            <h1>Patient List</h1>
+            <button id= "add-new">Add new Patient</button>
+        </div>
+    </div>
+    <!-- Modal (popup) -->
+    <div id="patientModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Input New Data Patient</h3>
+            <br><br>
+                <form id="patientForm">
+                    <input type="number" id="patientid" placeholder="Patient ID" required>
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="text" id="address" placeholder="Address" required>
+                    <input type="text" id="checkup" placeholder="Check Up" required>
+                    <button type="submit" class="btnSimpan"> Simpan </button>
+                    <button type="reset" class="btnReset"> Reset</button>
+                </form>
+        </div>
+    </div>
+    <!-- Modal (popup) end -->
+    <div class="table_section">
+        <table id="tabel-form">
+            <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Check Up</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+        
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
