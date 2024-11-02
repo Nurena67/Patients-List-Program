@@ -1,11 +1,25 @@
 let patients = [];
 
+// Fungsi untuk menyimpan data patients ke local storage
+function saveToLocalStorage() {
+  localStorage.setItem('patients', JSON.stringify(patients));
+}
+
+// Fungsi untuk memuat data patients dari local storage saat halaman dimuat
+function loadFromLocalStorage() {
+  const data = localStorage.getItem('patients');
+  if (data) {
+    patients = JSON.parse(data);
+  }
+}
+
 function list() {
   return patients;
 }
 
 function create(id, name, address, checkup) {
   patients.push({ id, name, address, checkup });
+  saveToLocalStorage();
   showList();
 }
 
@@ -19,6 +33,7 @@ function update(id, name, address, checkup) {
     patient.name = name;
     patient.address = address;
     patient.checkup = checkup;
+    saveToLocalStorage();
     showList();
   }
 }
@@ -100,6 +115,12 @@ function editPatient(id) {
 
 function deletePatient(id) {
   patients = patients.filter((patient) => patient.id !== id);
+  saveToLocalStorage();
   showList();
 };
 
+
+saveToLocalStorage();
+showlist();
+
+                              
