@@ -120,7 +120,7 @@ function deletePatient(id) {
 };
 
 
-saveToLocalStorage();
+loadFromLocalStorage();
 showlist();
 
                               
